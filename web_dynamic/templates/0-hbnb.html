@@ -2,21 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js">
-		let cacheId = '{{ cache_id }}';
-      function addCacheIdToLinks() {
-        let links = document.getElementsByTagName('link');
-        for (var i = 0; i < links.length; i++) {
-          let href = links[i].getAttribute('href');
-          if (href.indexOf('?') === -1) {
-            links[i].setAttribute('href', href + '?cache_id=' + cacheId);
-          } else {
-            links[i].setAttribute('href', href + '&cache_id=' + cacheId);
-          }
-        }
-      }
-      window.onload = addCacheIdToLinks;
-	</script>
     <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css">
@@ -89,5 +74,20 @@
     <footer>
       <p>Holberton School</p>
     </footer>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js">
+		let cacheId = '{{ cache_id }}';
+      function addCacheIdToLinks() {
+        let links = document.getElementsByTagName('link');
+        for (var i = 0; i < links.length; i++) {
+          let href = links[i].getAttribute('href');
+          if (href.indexOf('?') === -1) {
+            links[i].setAttribute('href', href + '?cache_id=' + cacheId);
+          } else {
+            links[i].setAttribute('href', href + '&cache_id=' + cacheId);
+          }
+        }
+      }
+      window.onload = addCacheIdToLinks;
+	</script>
   </body>
 </html>
