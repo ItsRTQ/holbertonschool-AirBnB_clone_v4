@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js">
-		var cacheId = '{{ cache_id }}';
+		let cacheId = '{{ cache_id }}';
       function addCacheIdToLinks() {
-        var links = document.getElementsByTagName('link');
+        let links = document.getElementsByTagName('link');
         for (var i = 0; i < links.length; i++) {
-          var href = links[i].getAttribute('href');
+          let href = links[i].getAttribute('href');
           if (href.indexOf('?') === -1) {
             links[i].setAttribute('href', href + '?cache_id=' + cacheId);
           } else {
